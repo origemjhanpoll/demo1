@@ -13,15 +13,15 @@ import {
   Lightbox,
 } from "react-native-router-flux";
 
-import Login from "../pages/Login";
-import Home from "../pages/Home";
+import LoginRouter from "../pages/Login/router";
+import HomeRouter from "../pages/Home/router";
 
 const Routers = () => {
   return (
     <Router>
       <Stack key="root">
-        <Scene key="login" component={Login} title="Login" />
-        <Scene key="home" component={Home} title="Home" />
+        {LoginRouter()}
+        {HomeRouter()}
       </Stack>
     </Router>
   );
