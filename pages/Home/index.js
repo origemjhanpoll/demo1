@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: uri }} style={{ width: width, height: 300 }} />
+      <Image source={{ uri: uri }} style={{ width: width, height: width }} />
     </View>
   );
 }
