@@ -1,23 +1,60 @@
 import React, { useState, useRef } from "react";
-import { View, Image, Dimensions, StyleSheet } from "react-native";
+import { View, Image, Dimensions, StyleSheet, Text, StatusBar } from "react-native";
+import { useFonts, Inter_900Black, Inter_200ExtraLight } from '@expo-google-fonts/inter';
+import { AppLoading } from 'expo';
+
+
+const width = Dimensions.get("window").width
+const height = Dimensions.get("window").height
 
 export default function Home() {
-  const [width, setWidth] = useState(Dimensions.get("window").width);
-  const uri = useRef(
-    "https://images.unsplash.com/photo-1590962677400-f97466952836?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-  ).current;
+  const uri = useRef("https://source.unsplash.com/random").current;
+  const [fontsLoaded] = useFonts({ Inter_900Black, Inter_200ExtraLight });
 
-  return (
-    <View style={styles.container}>
-      <Image source={{ uri: uri }} style={{ width: width, height: width }} />
-    </View>
-  );
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <View style={styles.container}>
+        <StatusBar hidden />
+        <View style={styles.Card}>
+          <Text style={styles.Font1}>Title</Text>
+          <Text style={styles.Font2}>SubTitle in Performace</Text>
+          <Image source={{ uri: uri }} style={styles.Image} />
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
+  Card: {
+    borderRadius: 48,
+    height: height,
+    width: width,
+  },
+  Image: {
+    backgroundColor: '#E8E8E8',
+    borderTopRightRadius: 48,
+    borderTopLeftRadius: 48,
+    flex: 1,
+    width: null,
+    height: null,
+  },
+  Font1: {
+    fontFamily: 'Inter_900Black',
+    fontSize: 22,
+    textAlign: 'center',
+    paddingBottom: 4,
+  },
+  Font2: {
+    fontFamily: 'Inter_200ExtraLight',
+    fontSize: 16,
+    textAlign: 'center',
+    paddingBottom: 14,
+  }
 });
