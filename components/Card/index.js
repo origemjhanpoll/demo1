@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: 'center',
     flexDirection: 'row',
+    marginBottom: 16
   },
   Image: {
     backgroundColor: '#E8E8E8',

@@ -9,10 +9,16 @@ export default function Home() {
     <View style={styles.container}>
       <StatusBar hidden />
       <Card
-        onPress={() => Actions.animation1()}
-        image='https://images.unsplash.com/photo-1542202024422-83d20d29efff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+        onPress={() => Actions.screen1()}
+        image='https://source.unsplash.com/random/?animation'
         title='Animação'
         subTitle='Animando dois retangulos criados em SVG'
+      />
+      <Card
+        onPress={() => Actions.screen2()}
+        image='https://source.unsplash.com/random/?text'
+        title='TextInput'
+        subTitle='Testando o TextInput com FlatList'
       />
     </View >
   );

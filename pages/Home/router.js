@@ -6,13 +6,15 @@ import {
 } from "react-native-router-flux";
 
 import Home from "./index";
-import Animation1 from "../Animations/animation1"
+import Screen1 from "../Animations/screen1"
+import Screen2 from "../Animations/screen2"
 
 const HomeRouter = () => {
   return (
     <Stack key="stackRoot" initial hideNavBar>
       <Scene key="home" component={Home} title="Home" />
-      <Scene key="animation1" component={Animation1} title="Animation1" back hideNavBar={false} />
+      <Scene key="screen1" component={Screen1} title="Screen1" back hideNavBar={false} />
+      <Scene key="screen2" component={Screen2} title="Screen2" back hideNavBar={false} />
     </Stack>
   );
 };
