@@ -111,7 +111,7 @@ export default function Screen2() {
     { nome: 'vale' },
   ]
   return (
-    <KeyboardAvoidingView behavior='padding' style={{ flex: 1 }}>
+    <KeyboardAvoidingView behavior='height' style={{ flex: 1 }}>
       <FlatList
         keyExtractor={(item, index) => String(item.nome + index)}
         data={data}
