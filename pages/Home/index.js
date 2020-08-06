@@ -11,7 +11,7 @@ export default function Home() {
       <Card
         onPress={() => Actions.screen1()}
         image='https://source.unsplash.com/random/?animation'
-        title='Animação'
+        title='Animatable'
         subTitle='Animando dois retangulos criados em SVG'
       />
       <Card
@@ -19,6 +19,12 @@ export default function Home() {
         image='https://source.unsplash.com/random/?text'
         title='TextInput'
         subTitle='Testando o TextInput com FlatList'
+      />
+      <Card
+        onPress={() => Actions.screen3()}
+        image='https://source.unsplash.com/random/?Animation'
+        title='Animated'
+        subTitle='Testando a api de animação'
       />
     </View >
   );
