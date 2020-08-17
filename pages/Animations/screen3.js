@@ -4,7 +4,6 @@ import { Animated, Text, View, StyleSheet, Button } from "react-native";
 const Screen3 = () => {
   // fadeAnim will be used as the value for opacity. Initial Value: 0
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const fadeContin = useRef(new Animated.Value(0)).current;
 
   const fadeIn = () => {
     // Will change fadeAnim value to 1 in 5 seconds
@@ -24,17 +23,10 @@ const Screen3 = () => {
     }).start();
   };
 
-  const continous = () => {
-    Animated.decay(fadeContin, {
-      velocity: 2000,
-      // deceleration: 0.5,
-      useNativeDriver: true,
-    }).start();
-  };
 
   return (
     <View style={styles.container}>
-      <Animated.View style={{ height: 20, backgroundColor: 'cyan', width: fadeContin, }} />
+
       <Animated.View
         style={[
           styles.fadingContainer,
@@ -48,7 +40,6 @@ const Screen3 = () => {
       <View style={styles.buttonRow}>
         <Button title="Fade In" onPress={fadeIn} />
         <Button title="Fade Out" onPress={fadeOut} />
-        <Button title="Continous" onPress={continous} />
       </View>
     </View>
   );

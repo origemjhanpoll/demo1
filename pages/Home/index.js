@@ -26,6 +26,12 @@ export default function Home() {
         title='Animated'
         subTitle='Testando a api de animação'
       />
+      <Card
+        onPress={() => Actions.screen4()}
+        image='https://source.unsplash.com/random/?Header'
+        title='Header'
+        subTitle='Testando header e FlatList'
+      />
     </View >
   );
 }
